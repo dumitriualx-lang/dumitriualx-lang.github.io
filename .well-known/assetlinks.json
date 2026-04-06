@@ -3,6 +3,6 @@
   "target": {
     "namespace": "android_app",
     "package_name": "com.dumitriualxlang.solardashboard",
-    "sha256_cert_fingerprints": ["8B:A3:E4:19:61:58:68:F5:20:9F:E2:CC:55:7A:26:36:B4:38:C0:34:68:10:66:6F:02:48:6D:F1:6E:A4:29:7B"]
+    "sha256_cert_fingerprints": ["5C:49:7B:83:87:6D:2D:C0:8F:24:84:87:83:A4:FF:7B:D7:9F:11:99:9E:9D:3C:5C:72:55:E9:CD:5E:E5:70:F3"]
   }
 }]
