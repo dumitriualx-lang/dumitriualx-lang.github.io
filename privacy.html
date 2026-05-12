@@ -1,82 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solar Dashboard — Privacy Policy</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 0 20px 60px;
-      color: #1a1a1a;
-      line-height: 1.7;
-      font-size: 15px;
-    }
-    h1 { color: #1D9E75; font-size: 22px; margin-bottom: 4px; }
-    h2 { color: #1a1a1a; font-size: 16px; margin-top: 28px; margin-bottom: 6px; }
-    .updated { color: #888; font-size: 13px; margin-bottom: 28px; }
-    .highlight {
-      background: #f0fdf8;
-      border-left: 4px solid #1D9E75;
-      padding: 12px 16px;
-      border-radius: 4px;
-      margin: 20px 0;
-      font-weight: 600;
-      color: #0F6E56;
-    }
-    a { color: #1D9E75; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solar Dashboard — Privacy Policy</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f9fafb;
+    color: #1a1a2e;
+    line-height: 1.7;
+    padding: 24px 16px 60px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  .header {
+    display: flex; align-items: center; gap: 14px;
+    padding: 28px 0 24px;
+    border-bottom: 2px solid #e8f5e9;
+    margin-bottom: 32px;
+  }
+  .logo { font-size: 40px; }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: #1a1a2e; }
+  .header-text p  { font-size: 13px; color: #666; margin-top: 2px; }
+  .badge {
+    display: inline-block; background: #e8f5e9; color: #1b5e20;
+    font-size: 11px; font-weight: 700; padding: 3px 10px;
+    border-radius: 20px; margin-bottom: 28px;
+  }
+  h2 {
+    font-size: 15px; font-weight: 700; color: #1a1a2e;
+    margin: 28px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #eee;
+  }
+  p  { font-size: 14px; color: #444; margin-bottom: 10px; }
+  ul { padding-left: 18px; margin-bottom: 10px; }
+  li { font-size: 14px; color: #444; margin-bottom: 6px; }
+  strong { color: #1a1a2e; }
+  a  { color: #2e7d32; }
+  .highlight {
+    background: #e8f5e9; border-left: 3px solid #2e7d32;
+    padding: 12px 16px; border-radius: 0 8px 8px 0;
+    font-size: 14px; color: #1b5e20; margin-bottom: 20px;
+  }
+  .perm {
+    background: #fff; border: 1px solid #e8e8e8;
+    border-radius: 10px; padding: 12px 16px;
+    margin-bottom: 8px;
+  }
+  .perm-name { font-size: 13px; font-weight: 700; color: #1a1a2e; font-family: monospace; }
+  .perm-desc { font-size: 13px; color: #555; margin-top: 2px; }
+  footer {
+    margin-top: 40px; padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 12px; color: #999; text-align: center;
+  }
+</style>
 </head>
 <body>
+<div class="wrap">
 
-  <h1>☀️ Solar Dashboard</h1>
-  <h1 style="color:#1a1a1a;font-size:18px;font-weight:400;margin-top:4px">Privacy Policy</h1>
-  <div class="updated">Last updated: April 2026</div>
+  <div class="header">
+    <div class="logo">☀️</div>
+    <div class="header-text">
+      <h1>Solar Dashboard</h1>
+      <p>Privacy Policy</p>
+    </div>
+  </div>
+
+  <div class="badge">Last updated: May 2026</div>
 
   <div class="highlight">
-    Solar Dashboard does not collect, store on any server, or share any personal data with third parties. Ever.
+    Solar Dashboard does not collect, store on any server, or share any personal data with third parties. All data stays on your device.
   </div>
 
   <h2>1. What data is used</h2>
   <p>Solar Dashboard uses the following data solely to provide its features:</p>
   <ul>
     <li><strong>GPS location</strong> — used on-device to calculate the sun's position and angle relative to your solar panels, and to request local weather data from Open-Meteo. Your coordinates are stored locally on your device (Android SharedPreferences) so the app remembers your location between sessions. They are never stored on any external server.</li>
-    <li><strong>Weather data</strong> — your GPS coordinates are sent to <a href="https://open-meteo.com" target="_blank">Open-Meteo</a> (a free, open-source weather API) to retrieve local solar irradiance, temperature and cloud cover. Open-Meteo does not require an account and does not associate coordinates with any personal identity.</li>
+    <li><strong>Weather data</strong> — your GPS coordinates are sent to <a href="https://open-meteo.com">Open-Meteo</a>, a free open-source weather API, to retrieve local solar irradiance, temperature and cloud cover. Open-Meteo does not require an account and does not associate coordinates with any personal identity.</li>
     <li><strong>Energy readings</strong> — consumption values, battery state of charge, and system configuration you enter are stored locally on your device only. This data never leaves your device.</li>
+    <li><strong>Background monitoring data</strong> — while the app runs in the background, the monitoring service fetches weather data using your stored GPS coordinates and calculates estimated solar production, battery charge level and energy flows. All results are stored locally on your device in Android SharedPreferences and used to power the app's dashboard and notifications. No background data is transmitted to any server other than Open-Meteo for weather.</li>
   </ul>
 
   <h2>2. What data is NOT collected</h2>
   <ul>
     <li>No account or registration required</li>
-    <li>No analytics or tracking</li>
+    <li>No analytics or tracking of any kind</li>
     <li>No advertising</li>
     <li>No crash reporting sent to external servers</li>
     <li>No data sold or shared with third parties</li>
+    <li>No personal data transmitted to the developer</li>
   </ul>
 
-  <h2>3. Permissions explained</h2>
+  <h2>3. Background service</h2>
+  <p>Solar Dashboard runs a persistent background service (Android Foreground Service) to provide continuous solar monitoring, even when the app is not on screen. This service:</p>
   <ul>
-    <li><strong>Location (ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION)</strong> — required to calculate your solar panel's sun angle and fetch local weather. Without this the app cannot estimate production.</li>
-    <li><strong>Internet (INTERNET)</strong> — required to fetch weather data from Open-Meteo and load the app interface.</li>
-    <li><strong>Notifications (POST_NOTIFICATIONS)</strong> — optional. Used only to send local alerts about solar production windows and appliance scheduling. No notification data is sent to external servers.</li>
+    <li>Fetches weather and irradiance data from Open-Meteo approximately every 30 minutes</li>
+    <li>Calculates estimated solar production, battery state and energy flows</li>
+    <li>Stores updated values locally to your device</li>
+    <li>Sends local notifications about solar production windows, surplus energy and battery status</li>
+    <li>Shows a persistent status notification while active (required by Android for foreground services)</li>
+    <li>Restarts automatically after device reboot to maintain uninterrupted monitoring</li>
   </ul>
+  <p>This service does not transmit any personal data beyond the Open-Meteo weather requests described above.</p>
 
-  <h2>4. Third-party services</h2>
-  <p>The only external service contacted by Solar Dashboard is <a href="https://open-meteo.com/en/terms" target="_blank">Open-Meteo</a>, an open-source weather API. Only your GPS coordinates are sent, with no personal identifiers. Please review <a href="https://open-meteo.com/en/terms" target="_blank">Open-Meteo's terms</a> for their data handling practices.</p>
+  <h2>4. Permissions explained</h2>
 
-  <h2>5. Data retention</h2>
-  <p>All data (location cache, energy logs, configuration) is stored locally on your device using Android's SharedPreferences and localStorage. It is automatically deleted when you uninstall the app. You can clear it at any time via Android Settings → Apps → Solar Dashboard → Storage → Clear Data.</p>
+  <div class="perm">
+    <div class="perm-name">ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION</div>
+    <div class="perm-desc">Required to determine your location for sun angle calculation and local weather fetching. Without this the app cannot estimate solar production.</div>
+  </div>
+  <div class="perm">
+    <div class="perm-name">INTERNET</div>
+    <div class="perm-desc">Required to fetch weather and irradiance data from Open-Meteo and load the app interface from GitHub Pages.</div>
+  </div>
+  <div class="perm">
+    <div class="perm-name">POST_NOTIFICATIONS</div>
+    <div class="perm-desc">Optional. Used to send local alerts about solar production windows, appliance scheduling and battery status. No notification data is sent to external servers.</div>
+  </div>
+  <div class="perm">
+    <div class="perm-name">FOREGROUND_SERVICE, FOREGROUND_SERVICE_DATA_SYNC</div>
+    <div class="perm-desc">Required to run the background monitoring service. Android requires foreground service declaration for apps that perform background data synchronisation tasks.</div>
+  </div>
+  <div class="perm">
+    <div class="perm-name">RECEIVE_BOOT_COMPLETED</div>
+    <div class="perm-desc">Allows the app to restart the monitoring service automatically after the device is rebooted, ensuring uninterrupted solar monitoring.</div>
+  </div>
+  <div class="perm">
+    <div class="perm-name">WAKE_LOCK</div>
+    <div class="perm-desc">Allows the background service to briefly wake the processor to perform scheduled monitoring checks and calculations.</div>
+  </div>
+  <div class="perm">
+    <div class="perm-name">SCHEDULE_EXACT_ALARM</div>
+    <div class="perm-desc">Allows the app to schedule precise 30-minute monitoring intervals using Android's AlarmManager. Used as a backup to the foreground service to ensure monitoring continues reliably.</div>
+  </div>
+  <div class="perm">
+    <div class="perm-name">REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</div>
+    <div class="perm-desc">Requests that the device does not put the monitoring service to sleep during battery optimisation. This is necessary to ensure time-sensitive solar production alerts (such as surplus energy notifications) fire reliably. Users can revoke this in Android Settings at any time.</div>
+  </div>
+  <div class="perm">
+    <div class="perm-name">ACCESS_NETWORK_STATE</div>
+    <div class="perm-desc">Allows the app to check whether an internet connection is available before attempting weather data requests.</div>
+  </div>
 
-  <h2>6. Children's privacy</h2>
-  <p>Solar Dashboard does not knowingly collect any data from children under 13. The app contains no user accounts, no social features, and no data collection of any kind.</p>
+  <h2>5. Third-party services</h2>
+  <p>The only external service contacted by Solar Dashboard is <a href="https://open-meteo.com">Open-Meteo</a>, an open-source weather API. Only your GPS coordinates are sent, with no personal identifiers attached. Please review <a href="https://open-meteo.com/en/terms">Open-Meteo's terms</a> for their data handling practices.</p>
+  <p>No other third-party SDKs, analytics tools, advertising networks or tracking services are used.</p>
 
-  <h2>7. Changes to this policy</h2>
-  <p>If this privacy policy changes, the updated version will be published at this URL with a new "Last updated" date.</p>
+  <h2>6. Data retention and deletion</h2>
+  <p>All data (location cache, energy logs, configuration, background monitoring history) is stored locally on your device using Android SharedPreferences and browser localStorage. It is automatically and permanently deleted when you uninstall the app.</p>
+  <p>You can clear all app data at any time without uninstalling via:<br>
+  <strong>Android Settings → Apps → Solar Dashboard → Storage → Clear Data</strong></p>
 
-  <h2>8. Contact</h2>
+  <h2>7. International users</h2>
+  <p>Solar Dashboard is available in 160+ countries. Regardless of your location, the same data practices described in this policy apply to all users worldwide. No personal data is stored on any server in any country — all data remains on your device.</p>
+
+  <h2>8. Children's privacy</h2>
+  <p>Solar Dashboard does not knowingly collect any data from children under 13. The app contains no user accounts, no social features and no data collection of any kind beyond what is described in this policy.</p>
+
+  <h2>9. Changes to this policy</h2>
+  <p>If this privacy policy changes, the updated version will be published at this URL with a new "Last updated" date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+  <h2>10. Contact</h2>
   <p>For any privacy-related questions, contact the developer at the email address listed on the Google Play Store page for Solar Dashboard.</p>
 
+  <footer>
+    Solar Dashboard · Privacy Policy · Last updated May 2026<br>
+    <a href="https://play.google.com/store/apps/details?id=com.dumitriualxlang.solardasboard">Google Play Store</a>
+  </footer>
+
+</div>
 </body>
 </html>
